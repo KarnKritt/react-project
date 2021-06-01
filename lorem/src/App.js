@@ -3,7 +3,7 @@ import data from "./data";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [text, setText] = useState(data);
+  const [text, setText] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,8 +14,8 @@ function App() {
     if (amount > data.length) {
       amount = data.length;
     }
-    let lorem = data.slice(0, amount);
-    setText(lorem);
+
+    setText(data.slice(0, amount));
   };
 
   return (
@@ -37,8 +37,8 @@ function App() {
         </button>
       </form>
       <div className="show">
-        {text.map((lorem) => {
-          return <p>{lorem}</p>;
+        {text.map((lorem, index) => {
+          return <p key="index">{lorem}</p>;
         })}
       </div>
     </div>
