@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: paleturquoise;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2em;
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: dimgray;
+  animation: scaly 2s infinite;
+  z-index: 3;
+}
+@keyframes scaly {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+.modalBtn {
+  padding: .4em .8em;
+  color: #fff;
+  background: dimgray;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modalBtn:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+.modal.active {
+  display: flex;
+}
+
+.card {
+  width: 20em;
+  height: 10em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.times {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  cursor: pointer;
+  color: red;
+  font-size: 1.4em;
+  background: none;
+  border: none;
+}
+.side {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 25em;
+  height: 100vh;
+  z-index: 5;
+  transform: translateX(-100%);
+  transition: 1s;
+}
+.side.active{
+transform: translateX(0%);
+
+}
+.side .logo h1 {
+  margin: .5em 0 0 .5em;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.side .logo h1 span {
+  color: dodgerblue
+}
+.menu {
+  margin-top: 1em;
+}
+.menu li {
+  padding: .4em 1em;
+  list-style: none;
+  transition: .2s;
+}
+.menu li a {
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: dimgray;
+}
+.menu li:hover {
+  background: lightgray;
+}
